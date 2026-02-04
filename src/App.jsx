@@ -11,11 +11,26 @@ function HeadBox(){
 }
 
 function WeatherBox(){
+  
+  const [location, setLocation] = useState('')
+  const [weatherData, setweatherData] = useState(null)
+  const [status, setStatus] = useState('idle')
+
+  function handleSearch(inputLocation){
+    if(inputLocation===''){
+      return
+    }
+    
+    setLocation(inputLocation)
+  }
+
+  console.log(location)
+  
   return(
     <>
       <h2>weatherbox</h2>
       <div>
-        <SearchBox />
+        <SearchBox onSearch={handleSearch}/>
         <CurrentWeatherBox />
         <ForecastBox />
       </div>
@@ -25,9 +40,19 @@ function WeatherBox(){
   )
 }
 
-function SearchBox(){
+function SearchBox({onSearch}){
+  const [input, setInput] = useState('')
+  
   return(
-    <div>searchbox</div>
+    <>
+      <div>
+        <h2>Search here</h2>
+
+        <label for="location">Enter location to search for: </label>
+        <input type='text' value={input} onChange={(e)=>setInput(e.target.value)}></input>
+        <button onClick={()=>onSearch(input)}>Submit</button>
+      </div>
+    </>
   )
 }
 
