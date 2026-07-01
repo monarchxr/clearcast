@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+</head>
+<body>
+
+    <main>
+        <div id="app-container">
+            <!--Container for location and unit input-->
+            <div id="search-bar">
+                <!--Input field + submit button for city name-->
+
+                <form id="input-form">
+                    <input id="city" type="text" required placeholder="Bengaluru" autocomplete="off">
+                    <select id="units">
+                        <option value="C">Celsius</option>
+                        <option value="F">Fahrenheit</option>
+                        <option value="K">Kelvin</option>
+                    </select>
+                    
+                    <input id="submit-btn" type="submit" value="Search city">
+                </form>
+            </div>
+
+            <!--Container for weather statistics-->
+            <div id="weather-container">
+                <!--Container for current weather-->
+                <div id="curr-weather-container">
+                    <div id="icon">
+                        <img id="weather-icon" src="" width="90" height="90">
+                    </div>
+
+                    <div id="curr-data">
+                        <div id="time-and-day">
+                            <span id="curr-day-time">Monday, 10:01</span>
+                        </div>
+
+                        <div id="weather-display">
+                            <span id="curr-weather">Sunny</span>
+                            <span id="curr-temp">32C</span>
+                        </div>
+
+                        <div id="curr-location">
+                            <span id="location">Kanpur</span>
+                        </div>
+                
+                    </div>
+                    
+                </div>
+
+                <!--Container for humidity and wind-->
+                <div id="indicator-label-container">
+                    <!--This should contain humidity and wind speed-->
+                    <span id="humidity">Humidity: <strong id="humid">33%</strong></span>
+                    <span id="wind">Wind: <strong id="speed">10m/s</strong></span>
+                </div>
+
+                <!--Container for upcoming weather forecast-->
+                <div id="future-weather-container">
+                    <!--Each container should have the day, icon and max and min temps-->
+                    <div class="day today">
+                        <span class="forecast-label">Today</span>
+                        <img class="forecast-icon" src="data:," width="32" height="32">
+                        <span class="forecast-high">10</span>
+                        <span class="forecast-low">1</span>
+                    </div>
+                    <div class="day">
+                        <span class="forecast-label">Today</span>
+                        <img class="forecast-icon" src="data:," width="32" height="32">
+                        <span class="forecast-high">10</span>
+                        <span class="forecast-low">1</span>
+                    </div>
+                    <div class="day">
+                        <span class="forecast-label">Today</span>
+                        <img class="forecast-icon" src="data:," width="32" height="32">
+                        <span class="forecast-high">10</span>
+                        <span class="forecast-low">1</span>
+                    </div>
+                    <div class="day">
+                        <span class="forecast-label">Today</span>
+                        <img class="forecast-icon" src="data:," width="32" height="32">
+                        <span class="forecast-high">10</span>
+                        <span class="forecast-low">1</span>
+                    </div>
+                    <div class="day">
+                        <span class="forecast-label">Today</span>
+                        <img class="forecast-icon" src="data:," width="32" height="32">
+                        <span class="forecast-high">10</span>
+                        <span class="forecast-low">1</span>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!--Container for simple map-->
+            <div id="map-container">
+                <div id="map"></figure>
+            </div>
+
+            <p id="error" hidden>Error occurred! => <span id="errormsg"></span></p>
+        </div>
+
+        
+    </main>
+
+    <footer>
+        <p>Built by <a href="https://github.com/monarchxr">monarchxr</a> · Powered by OpenWeatherMap & Leaflet</p>
+    </footer>
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="scripts.js"></script>
+    
+</body>
+</html>

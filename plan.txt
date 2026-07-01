@@ -1,0 +1,45 @@
+Weather App — Vanilla JS Task List
+1. HTML structure
+
+Input field + submit button for city name
+Container for current weather (temp, condition, icon)
+Container for extra stats (humidity, wind, etc.)
+Error message element (hidden by default)
+Loading state element (hidden by default)
+
+2. CSS basics
+
+Layout the containers (flex/grid, doesn't need to be fancy)
+Style the input/button
+Style hidden vs visible states for loading/error
+
+3. Get an API
+
+Sign up for OpenWeatherMap (or similar) free API key
+Test the API URL directly in browser first, before writing any JS — see the raw JSON response
+
+4. JS — Core logic
+
+Select your DOM elements (querySelector)
+Add a submit event listener on the form
+Write an async function that calls fetch() with the API URL + city + key
+Handle the response: parse JSON, check for errors (city not found)
+
+5. JS — Update the DOM
+
+Take the parsed data and write it into your weather containers (textContent/innerHTML)
+Show/hide loading state while fetch is in progress
+Show/hide error state if city is invalid or fetch fails
+
+6. Edge cases (don't skip these — this is where the JS learning actually happens)
+
+Empty input submitted
+Invalid city name
+API key error / rate limit
+Network failure (try/catch around fetch)
+
+7. Polish (optional, only after everything above works)
+
+Unit toggle (Celsius/Fahrenheit)
+Recent searches via localStorage
+Weather icon based on condition
